@@ -4,8 +4,8 @@
   "description": "a fun in theory node build",
   "main": "app.js",
   "scripts": {
-    "start-dev": "nodemon app ",
-    "watch": "browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public'",
+    "start-dev": "nodemon app",
+    "browsersync": "browser-sync start --proxy 'localhost:5050' --files 'index.html' 'chat.html' 'public'",
     "start": "node app"
   },
   "keywords": [],
