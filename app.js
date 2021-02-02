@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.static("public"));
 
-const port = process.env.PORT || 5050;
+const port = process.env.PORT || 5050;//in case of two app complete to each other
 
 app.get("/", (req,res) => {
     console.log('you have now hit the home route');
@@ -23,4 +23,13 @@ const server = app.listen(port, ()=>{
     console.log(`app is running on ${port}`);
 });
 
-messager.attach(server);
+//messager is the coonection manager - like a switcboard operator
+messager.attach(server);//io server
+
+messager.on('connection', (socket) => {//make a connection to operator
+    console.log(`a user connected: ${socket.id}`);
+
+    socket.on('disconnect', ( ) => {
+        console.log('a user has disconnection');
+    })
+});

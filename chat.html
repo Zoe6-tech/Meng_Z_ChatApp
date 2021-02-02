@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    
     <main id="app">
         <h2>This is where my awesome chat messages will show up</h2>
+        <!---vue constom message component goes here--->
+        
         <section calss="message-wrapper">
             <textarea class="text-message"></textarea>
             <input type="submit" value="send">
         </section>
     </main>
+
+    <script src="/socket.io/socket.io.js"></script>
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script defer src="scripts/components/main.js"></script>
+    <script defer src="scripts/main.js"></script>
+
 </body>
 </html>
