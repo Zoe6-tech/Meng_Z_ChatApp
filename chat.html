@@ -9,20 +9,19 @@
 <body>
     
     <main id="app">
-        <h2>This is where my awesome chat messages will show up</h2>
-        
-        <!---vue constom message component goes here--->
+        <h2>Chat messages:</h2>
+
+        <!-- vue custom component goes here -->
         <section class="messages">
-            <ul id="message" v-for="message in messages">
-                <newmessage : msg="message"></newmessage>
+            <ul id="messages" v-for="messages in messages">
+                <newmessage :msg="message"></newmessage>
             </ul>
         </section>
 
         <section class="message-wrapper">
             <textarea v-model="message" class="text-message"></textarea>
-            <input @click.prevent="dispatchMessage"  type="submit" value="send">
+            <input @click.prevent="dispatchMessage" type="submit" value="send">
         </section>
-
     </main>
 
     <script src="/socket.io/socket.io.js"></script>

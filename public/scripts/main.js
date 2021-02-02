@@ -20,11 +20,11 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
      const vm = new Vue({
          data:{//singular=send. plural=receive
-              message: [ ],
-              nickname: " ",
-              username: " ",
-              socketID: " ",
-              messages: " "
+            messages: [],
+            nickname: "",
+            username: "",
+            socketID: "",
+            message: ""
           },
 
           created: function(){
@@ -32,10 +32,10 @@ import ChatMessage from "./components/TheMessageComponent.js"
           },
 
           methods: {
-             dispatchMessage(){
+            dispatchMessage() {
                 debugger;
-                 socket.emit('chatmessage', { content: this.message, name: this.nickname || "Anonymous" })
-             }
+                socket.emit('chatmessage', {content: this.message, name: this.nickname || 'Anonymous'})
+            }
           },
 
           components: {
