@@ -9,12 +9,12 @@
 <body>
     
     <main id="app">
-        <h2>Chat messages:</h2>
+        <h2>This is where my awesome chat messages will show up:</h2>
 
         <!-- vue custom component goes here -->
         <section class="messages">
             <ul id="messages" v-for="message in messages">
-                <newmessage :msg="message"></newmessage>
+                <newmessage :msg="message" :socketid="socketID"></newmessage>
             </ul>
         </section>
 

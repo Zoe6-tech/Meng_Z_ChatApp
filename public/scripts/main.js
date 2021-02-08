@@ -15,7 +15,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
      }
      
      function appendMessage(message){
-         debugger;
+        // debugger;
          vm.messages.push(message);
      }
 
@@ -34,8 +34,9 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
           methods: {
             dispatchMessage() {
-                debugger;
-                socket.emit('chatmessage', {content: this.message, name: this.nickname || 'Anonymous'})
+                //debugger;
+                socket.emit('chatmessage', {content: this.message, name: this.nickname || 'Anonymous'});
+                this.message ="";//clear message after sent
             }
           },
 
