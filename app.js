@@ -41,7 +41,7 @@ messager.on('connection', (socket) => {//make a connection to operator
     //catch the message and every one can see the message(send to everyone)
     socket.on('chatmessage', function(msg){
         console.log(msg);
-          messager.emit('message'), { id: socket.id, message: msg }
+          messager.emit('message', { id: socket.id, message: msg });
     });
 
     socket.on('disconnect', ( ) => {

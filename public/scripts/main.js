@@ -15,16 +15,17 @@ import ChatMessage from "./components/TheMessageComponent.js"
      }
      
      function appendMessage(message){
+         debugger;
          vm.messages.push(message);
      }
 
      const vm = new Vue({
          data:{//singular=send. plural=receive
-            messages: [],
+            messages: [],//message income from server
             nickname: "",
             username: "",
             socketID: "",
-            message: ""
+            message: ""// message we type in 
           },
 
           created: function(){
