@@ -10,3 +10,5 @@ scripts: {
 }
 
 * and then run the 2 scripts each in their own terminal windows or tabs. start-ui should be invoked last.
+
+* sass --watch assets/sass:public/css --style compressed
