@@ -12,19 +12,25 @@
 <body>
     <main id="app">
     <div class="login_form">
-
-        <form @submit.prevent="addUser" >
         <h1>Wechat</h1>
-        <input type="text" v-model="username"  id="username" class="username" placeholder="type your awesome name here"><br><br>
-        
-        <input  type="submit" value="JOIN">
-        <a href="/chat" >JUST CHAT</a>
-        </form>
+        <!-- <img src="/public/images/wechat_logo.svg" alt="we chat"> -->
+
+       
+        <!-- <input type="text" v-model="username"  id="username"  placeholder="type your awesome name here"><br><br> -->
+        <!-- <input  type="submit" value="JOIN"> -->
+
+        <a href="/chat" >LET'S WE CHAT TOGETHER</a>
+      
 
     </div>
     </main>
+    
+   
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script defer type="module" src="js/main.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer type="module" src="js/addUser.js"></script>
+
+    
 </body>
 </html>
