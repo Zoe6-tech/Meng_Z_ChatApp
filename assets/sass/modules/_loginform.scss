@@ -1,4 +1,7 @@
+
+
 .login_form{
+
     text-align: center;
     margin: 5% auto;
     width: 60%;
@@ -10,20 +13,12 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border: 15px double #ffffff;
 
-    input[type=text] {
-        font-family:$default-family  !important;
-        width: 60%;
-        padding: 12px 20px;
-        margin: 8px 0;
+
+
+
+      a{
+        
         background-image: $main-bg-color;
-        border-radius: 60px 20px;
-        font-size: 15px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        border: 7px double #ffffff;
-      }
-
-
-      input[type=submit], a{
         font-family:$default-family  !important;
         text-decoration: none;
         display: inline-block;
@@ -33,15 +28,13 @@
         color: black;
         text-align: center;
         font-size: 15px;
-        padding: 8px;
-        width: 100px;
+        padding: 8px 20px;
+        width: 60%;
         transition: all 0.5s;
         cursor: pointer;
         margin-bottom: 10%;
     }
-    input[type=submit]:hover{
-        text-decoration: underline;
-    }
+
     a:hover{
         text-decoration: underline;
     }
