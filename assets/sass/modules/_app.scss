@@ -1,9 +1,14 @@
+#app{
+  min-height: 530px;
+}
+
 .chat-area{
   width: 80%;
   height: auto;
   text-align: center;
   margin: 5% auto;
-  background-image: linear-gradient(to left, #2eb9ce , #72be7d);
+  //background-image: $main-bg-color;
+  border: 15px double #ffffff;
   border: 2px solid none;
   padding: 10px;
   border-radius: 80px 20px;
@@ -20,19 +25,19 @@ h2{
 
 .new-message {
     padding: 10px;
-    background-color: #2eb9ce;
+    background-color: $blue;
     color: black;
     border-radius: 8px;
     float:left;
     clear: both;
     border-radius: 50px 20px;
-    border: 7px double #cccccc;
+    border: 7px double #ffffff;
   }
   
 .my-message{
-    background-color: #72be7d;
+    background-color: $green;
     float: right;
     border-radius: 50px 20px;
-    border: 7px double #cccccc;
+    border: 7px double #ffffff;
   }
   
