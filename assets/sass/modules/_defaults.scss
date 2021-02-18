@@ -1,34 +1,14 @@
-.new-message {
-  padding: 10px;
-  background-color: blue;
-  color: white;
-  border-radius: 8px;
-  float:left;
-  clear: both;
-}
 
-.my-message{
-  background-color: green;
-  float: right;
-}
-
-*{
-    
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body{
   background-color: $main-bg-color;
+  background-image: linear-gradient(to right, #2eb9ce , #72be7d);
   color: $main-text-color;
-  font-family:$default-family;
-  font-size: 16px;
+  font-family:$default-family  !important;
+  font-size: 20px;
 }
-a{
-    display: block;
-    color:white;
-    //text-decoration: none;
 
-    margin: 1rem 0;
+
+.hidden{
+  display: none;
 }
