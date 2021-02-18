@@ -1,8 +1,7 @@
 
 
 body{
-  background-color: $main-bg-color;
-  background-image: linear-gradient(to right, #2eb9ce , #72be7d);
+  background-image: $main-bg-color;
   color: $main-text-color;
   font-family:$default-family  !important;
   font-size: 20px;

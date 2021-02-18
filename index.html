@@ -12,13 +12,15 @@
 <body>
     <main id="app">
     <div class="login_form">
+
         <form @submit.prevent="addUser" >
         <h1>Wechat</h1>
         <input type="text" v-model="username"  id="username" class="username" placeholder="type your awesome name here"><br><br>
+        
         <input  type="submit" value="JOIN">
-        <!--temp hack to bypass login-->
         <a href="/chat" >JUST CHAT</a>
         </form>
+
     </div>
     </main>
     <!-- development version, includes helpful console warnings -->
