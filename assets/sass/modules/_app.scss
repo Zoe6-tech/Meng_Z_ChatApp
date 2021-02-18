@@ -1,0 +1,38 @@
+.chat-area{
+  width: 80%;
+  height: auto;
+  text-align: center;
+  margin: 5% auto;
+  background-image: linear-gradient(to left, #2eb9ce , #72be7d);
+  border: 2px solid none;
+  padding: 10px;
+  border-radius: 80px 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2{
+    font-size: 25px;
+    margin:2%
+}
+
+
+.new-message {
+    padding: 10px;
+    background-color: #2eb9ce;
+    color: black;
+    border-radius: 8px;
+    float:left;
+    clear: both;
+    border-radius: 50px 20px;
+    border: 7px double #cccccc;
+  }
+  
+.my-message{
+    background-color: #72be7d;
+    float: right;
+    border-radius: 50px 20px;
+    border: 7px double #cccccc;
+  }
+  

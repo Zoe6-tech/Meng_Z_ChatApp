@@ -7,13 +7,15 @@ import ChatMessage from "./components/TheMessageComponent.js"
      const socket = io();
 
      //messager service event handling -> incoming from the manager
-     function setUserId({sID, message}) {
+     function setUserId({sID}) {
          //incoming connected event with data
         
         //   debugger;
         vm.socketID = sID;
      }
-     
+
+
+
      function appendMessage(message){
         // debugger;
          vm.messages.push(message);
@@ -22,21 +24,30 @@ import ChatMessage from "./components/TheMessageComponent.js"
      const vm = new Vue({
          data:{//singular=send. plural=receive
             messages: [],//message income from server
-            nickname: "",
-            username: "",
+            username: "",//username we type in 
             socketID: "",
-            message: ""// message we type in 
+            message: "",// message we type in 
+
           },
 
-          created: function(){
-               console.log("its alive!!!");
-          },
+          created(){
+         },
+               //console.log("its alive!!!");
+         
 
           methods: {
+            // addUser() {
+            //     this.ready = true;
+            //     socket.emit('joined', this.username)
+            // },
+
             dispatchMessage() {
                 //debugger;
-                socket.emit('chatmessage', {content: this.message, name: this.nickname || 'Anonymous'});
-                this.message ="";//clear message after sent
+                socket.emit('chatmessage', {
+                    content: this.message, 
+                     name: this.username || 'Anonymous'
+                }); // if this.nickName is not set, put "anonymous"
+                this.message =null;//clear message after sent
             }
           },
 
@@ -48,5 +59,6 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
      socket.addEventListener("connected", setUserId);
      socket.addEventListener('message', appendMessage);
+    
 
 })();
