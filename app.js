@@ -40,7 +40,7 @@ messager.on('connection', (socket) => {//make a connection to operator
     //tell the connected user what ID assigned to them
     socket.emit('connected', { sID: `${socket.id}`,  message: 'has joined the chat' });
     //determine the number of sockets
-    console.log('connections', Object.keys(socket.connected).length);
+    socket.emit('connections', Object.keys(socket.connected).length);
 
     //catch the message and every one can see the message(send to everyone)
     socket.on('chatmessage', function(msg){
