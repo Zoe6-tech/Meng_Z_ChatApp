@@ -1,4 +1,7 @@
-
+.send-area{
+    width: 100%;
+    height: auto;
+}
 
 .message-send{
     width: 90%;
@@ -6,6 +9,7 @@
     margin:0 auto;
     display: flex;
     flex-direction: row;
+
 
     textarea{
         font-family:$default-family  !important;

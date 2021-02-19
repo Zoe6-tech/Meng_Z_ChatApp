@@ -33,18 +33,39 @@ const server = app.listen(port, ()=>{
 messager.attach(server);//io server
 
 messager.on('connection', (socket) => {//make a connection to operator
-    console.log(`a user connected: ${socket.id}`);
+
+    console.log(`${socket.id} has connected`);
+    
  
     //tell the connected user what ID assigned to them
-    socket.emit('connected', { sID: `${socket.id}`, message: 'new connection' });
-    
+    socket.emit('connected', { sID: `${socket.id}`,  message: 'has joined the chat' });
+    //determine the number of sockets
+    console.log('connections', Object.keys(socket.connected).length);
+
     //catch the message and every one can see the message(send to everyone)
     socket.on('chatmessage', function(msg){
         console.log(msg);
-          messager.emit('message', { id: socket.id, message: msg });
+          messager.emit('message', { 
+              id: socket.id,
+              name:msg.name,
+              message: msg
+            });
     });
 
-    socket.on('disconnect', ( ) => {
-        console.log('a user has disconnection');
+
+
+    socket.on('typing', (data) => {
+        socket.broadcast.emit('typing', data);
+        console.log('a user is typing');
     })
+
+    socket.on('stopTyping', () => {
+        socket.broadcast.emit('stopTyping');
+    })
+
+    
+    socket.on('disconnect', () => {
+        console.log('A user disconnected');
+    })
+
 });

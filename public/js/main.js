@@ -14,8 +14,8 @@ import ChatMessage from "./components/TheMessageComponent.js"
      }
      
 
-     function appendMessage(message){
-         vm.messages.push(message);
+     function appendMessage(msg){
+         vm.messages.push(msg);
      }
      
     
@@ -25,21 +25,37 @@ import ChatMessage from "./components/TheMessageComponent.js"
             username: "",//username we type in 
             socketID: "",
             message: "",
-            users:[],// message we type in 
+            //defualt typing and connection
+            typing: false,
+            connections:0,
 
           },
 
           created(){
-         },
+            
+            socket.on('typing', username => {
+                this.typing = username;
+            });
+    
+          
+            socket.on('stopTyping', () => {
+                this.typing = false;
+            });
+
+            socket.on('connections', (data) => {
+                this.connections = data;
+            });
+           
+        },
                //console.log("its alive!!!");
          
-         
-          methods: {
-            // addUser() {
-            //     this.ready = true;
-            //     socket.emit('joined', this.username)
-            // },
+        watch: {
+                message(value) {
+                    value ? socket.emit('typing', this.username || "anonymous") : socket.emit('stopTyping')
+                }
+        },
 
+          methods: {
 
             dispatchMessage() {
                 //debugger;
@@ -49,17 +65,21 @@ import ChatMessage from "./components/TheMessageComponent.js"
                     name: this.username || 'Anonymous'
                 }); // if this.nickName is not set, put "anonymous"
                 this.message =null;//clear message after sent
+
             }
+
+
           },
 
           components: {
               newmessage: ChatMessage
-          }
+          },
+
+
            
      }).$mount("#app");
 
      socket.addEventListener("connected", setUserId);
-     socket.addEventListener('disconnect', appendMessage);
      socket.addEventListener('message', appendMessage);
 
 
