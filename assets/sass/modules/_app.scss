@@ -23,24 +23,7 @@ h2{
 }
 
 
-.new-message {
-    padding: 10px;
-    background-color: $blue;
-    color: black;
-    border-radius: 8px;
-    float:left;
-    clear: both;
-    border-radius: 50px 20px;
-    border: 7px double #ffffff;
-  }
-  
-.my-message{
-    background-color: $green;
-    float: right;
-    border-radius: 50px 20px;
-    border: 7px double #ffffff;
-  }
-  
+
   input[type=text] {
     font-family:$default-family  !important;
     width: 75%;
@@ -54,3 +37,4 @@ h2{
     float: left;
     margin-left: 5%;
   }
+

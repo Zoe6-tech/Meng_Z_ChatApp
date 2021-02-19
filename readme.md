@@ -1,18 +1,48 @@
-https://browsersync.io/
-npm install -g browser-sync
+# We Chat
+![header image](public/images/readme.JPG "chatapp")<br>
+This is  an interactive chat application built with Node, Express and Vue (with socket.io) <br>
+[Heroku](https://chat-app-meng.herokuapp.com/)
 
-* split the scripts into 2 and run them sequentially, like so:
+## Functions
+✔️ Allow user input their username <br>
+✔️ Allow users send messages to others<br>
+✔️ Show user typing statement<br>
+✔️ Show online user(s)<br>
 
-scripts: {
-"start": "node app",
-"start-dev": "nodemon app",
-"start-ui": "browser-sync start ..... "
-}
-
-* and then run the 2 scripts each in their own terminal windows or tabs. start-ui should be invoked last.
-
+## Code Examples
+* socket.on('connections', (data) => { this.connections = data; });<br>
+* browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public' 
 * sass --watch assets/sass:public/css --style compressed
 
-* second window :localhost:5050/chat
+## Reference
+* ([{{typing}}](https://masteringbackend.com/posts/build-a-real-time-chat-app-with-vuejs-socket-io-and-nodejs)) 
 
-* https://chat-app-meng.herokuapp.com/
+## How to set up locally
+1. npm install
+2. npm install -g browser-sync
+3. nodemon app
+4. browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public'
+5. second url: localhost:5050
+
+## Author
+### Designer 
+Zhu Meng
+
+### Develper
+Zhu Meng
+
+## License
+This project is licensed under the MIT[MIT]
+([MIT](https://choosealicense.com/licenses/mit/)) license
+
+Copyright (c) 2021 Meng Zhu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+
