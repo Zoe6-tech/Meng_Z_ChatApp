@@ -5,7 +5,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
     //load socket library and make a connection 
      const socket = io();
-
+    
 
      //messager service event handling -> incoming from the manager
      function setUserId({sID, message}) {
@@ -26,6 +26,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
             socketID: "",
             message: "",
             //defualt typing and connection
+            time:"",
             typing: false,
             connections:0,
 
@@ -58,16 +59,19 @@ import ChatMessage from "./components/TheMessageComponent.js"
           methods: {
 
             dispatchMessage() {
+                const current = new Date();
+                this.time = current.getFullYear()+'-'+(current.getMonth()+1)+'-'+current.getDate()+ ' ' + current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();;
                 //debugger;
                 socket.emit('chatmessage', {
                     sID: this.socketID,
                     content: this.message,
-                    name: this.username || 'Anonymous'
+                    name: this.username || 'Anonymous',
+                    time: this.time,
                 }); // if this.nickName is not set, put "anonymous"
                 this.message =null;//clear message after sent
-
             }
-
+            
+          
 
           },
 

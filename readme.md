@@ -8,6 +8,7 @@ This is  an interactive chat application built with Node, Express and Vue (with 
 ✔️ Allow users send messages to others<br>
 ✔️ Show user typing statement<br>
 ✔️ Show online user(s)<br>
+✔️ Show chat time <br>
 
 ## Code Examples
 * socket.on('connections', (data) => { this.connections = data; });<br>
