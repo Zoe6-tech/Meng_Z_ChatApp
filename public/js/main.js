@@ -14,8 +14,8 @@ import ChatMessage from "./components/TheMessageComponent.js"
      }
      
 
-     function appendMessage(msg){
-         vm.messages.push(msg);
+     function appendMessage(message){
+         vm.messages.push(message);
      }
      
     
@@ -25,7 +25,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
             username: "",//username we type in 
             socketID: "",
             message: "",
-            //defualt typing and connection
+            //datetime, typing and connection
             time:"",
             typing: false,
             connections:0,
@@ -43,8 +43,8 @@ import ChatMessage from "./components/TheMessageComponent.js"
                 this.typing = false;
             });
 
-            socket.on('connections', (data) => {
-                this.connections = data;
+            socket.on('connections', socketID => {
+                this.connections = socketID;
             });
            
         },
@@ -60,7 +60,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
             dispatchMessage() {
                 const current = new Date();
-                this.time = current.getFullYear()+'-'+(current.getMonth()+1)+'-'+current.getDate()+ ' ' + current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();;
+                this.time = current.getFullYear()+'-'+(current.getMonth()+1)+'-'+current.getDate()+ ' ' + current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
                 //debugger;
                 socket.emit('chatmessage', {
                     sID: this.socketID,

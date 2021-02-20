@@ -7,8 +7,8 @@ This is  an interactive chat application built with Node, Express and Vue (with 
 ✔️ Allow user input their username <br>
 ✔️ Allow users send messages to others<br>
 ✔️ Show user typing statement<br>
-✔️ Show online user(s)<br>
 ✔️ Show chat datetime <br>
+✔️ Show online user(s) => still testing
 
 ## Code Examples
 * socket.on('connections', (data) => { this.connections = data; });<br>
@@ -23,7 +23,7 @@ This is  an interactive chat application built with Node, Express and Vue (with 
 2. npm install -g browser-sync
 3. nodemon app
 4. browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public'
-5. second url: localhost:5050
+5. localhost:3000 /5050
 
 ## Technologies
 * Visual Studio Code
